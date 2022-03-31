@@ -4,10 +4,10 @@ class Kv5 extends Component {
 
     constructor(props) {
       super();
-      this.state = {color: 'black', skaicius : 0}; // pradines steito reiksmes
+      this.state = {color: 'black', skaicius: 0}; // pradines steito reiksmes
   }
 
-  componentDidMount() {
+  componentDidMount() { // skaičiaus fiksavimas 
     const skaiciusStorage = parseInt(localStorage.getItem('skaicius'));
     if (!isNaN (skaiciusStorage)) {
       this.setState({skaicius: skaiciusStorage})
@@ -16,7 +16,7 @@ class Kv5 extends Component {
   }
 
     add = () => {
-      const skaiciusPo = this.state.skaicius + 1;
+      const skaiciusPo = this.state.skaicius + 1; //  kad fiksuojant skaičius per vieną vnt. nenusimuštų
         this.setState({skaicius: skaiciusPo});
         const json = JSON.stringify(skaiciusPo);
         localStorage.setItem("skaicius", json);
@@ -25,7 +25,7 @@ class Kv5 extends Component {
       render() {
       return (
         <>
-            Count: {this.state.skaicius}
+            Skaičius: {this.state.skaicius}
             <button onClick={this.add}>+</button>
         </>
       )

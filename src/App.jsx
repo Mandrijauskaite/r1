@@ -1,12 +1,12 @@
 import './App.css';
-import Kv5 from './Components/Kv5';
-
+import Form from './Components/Form';
 
 function App() {
+
   return (
     <div className="App">
-      <h1>3 užduotis</h1>
-        <Kv5/>
+        <h1>Forms</h1>
+        <Form></Form>
     </div>
   );
 }
